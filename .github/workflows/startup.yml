@@ -1,4 +1,5 @@
 name: R&C Actions clean startup check
+# public-mode diagnostic
 
 on:
   push:
