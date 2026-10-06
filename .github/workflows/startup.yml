@@ -1,5 +1,4 @@
-name: R&C Actions clean startup check
-# public-mode diagnostic
+name: R&C Actions clean runner provisioning check
 
 on:
   push:
@@ -10,9 +9,14 @@ permissions:
   contents: read
 
 jobs:
-  startup-check:
+  ubuntu-check:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - name: Confirm clean GitHub-hosted runner starts
-        run: echo "ACTIONS_CLEAN_STARTUP_OK"
+      - run: echo "UBUNTU_RUNNER_OK"
+
+  windows-check:
+    runs-on: windows-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "WINDOWS_RUNNER_OK"
