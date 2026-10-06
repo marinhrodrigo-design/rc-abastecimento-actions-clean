@@ -1,0 +1,17 @@
+name: R&C Actions clean startup check
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  startup-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Confirm clean GitHub-hosted runner starts
+        run: echo "ACTIONS_CLEAN_STARTUP_OK"
